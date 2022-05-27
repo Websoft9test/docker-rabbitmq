@@ -1,6 +1,5 @@
-# this file from docker-compose.workspace, delete mail-server
-# default MySQL root password is 123456
-
+# image: https://registry.hub.docker.com/_/rabbitmq
+# https://github.com/docker-library/rabbitmq/
 
 version: '3.8'
 
@@ -16,11 +15,15 @@ services:
       - RABBITMQ_DEFAULT_USER=${APP_NAME}
       - RABBITMQ_DEFAULT_USER=${APP_PASSWORD}
     volumes:
-      - 'rabbitmq_data:/bitnami/rabbitmq/mnesia'
-  
+      - 'rabbitmq_data:/var/lib/rabbitmq/mnesia'
+      - 'rabbitmq_plugins:/plugins'
+      - 'rabbitmq_config:/etc/rabbitmq/conf.d'
+      
 networks:
   default:
       name: ${APP_NAME}
     
 volumes:
   rabbitmq_data:
+  rabbitmq_plugins:
+  rabbitmq_config:
