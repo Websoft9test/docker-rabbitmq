@@ -15,7 +15,7 @@ services:
       - RABBITMQ_DEFAULT_USER=${APP_NAME}
       - RABBITMQ_DEFAULT_USER=${APP_PASSWORD}
     volumes:
-      - 'rabbitmq_data:/var/lib/rabbitmq/mnesia'
+      - 'rabbitmq_data:/var/lib/rabbitmq'
       - 'rabbitmq_plugins:/plugins'
       - 'rabbitmq_config:/etc/rabbitmq/conf.d'
       
