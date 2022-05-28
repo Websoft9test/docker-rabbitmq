@@ -6,6 +6,7 @@ version: '3.8'
 services:
   rabbitmq:
     image: rabbitmq:${APP_VERSION}
+    container_name: ${APP_NAME}
     ports:
       - '${APP_ER_PORT}:4369'
       - '${APP_MQ_PORT}:5672'
