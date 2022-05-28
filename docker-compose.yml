@@ -12,7 +12,6 @@ services:
       - '${APP_MQ_PORT}:5672'
       - '${APP_PORT}:15672'
     environment:
-      - RABBITMQ_SECURE_PASSWORD=yes
       - RABBITMQ_DEFAULT_USER=${APP_NAME}
       - RABBITMQ_DEFAULT_USER=${APP_PASSWORD}
     volumes:
