@@ -11,7 +11,7 @@ services:
       # EXPOSE 4369 5671 5672 15691 15692 25672
       - '${APP_ER_PORT}:4369'
       - '${APP_MQ_PORT}:5671'
-      - '${APP_PORT}:15691 '
+      - '${APP_PORT}:15691'
     environment:
       - RABBITMQ_DEFAULT_USER=${APP_NAME}
       - RABBITMQ_DEFAULT_USER=${APP_PASSWORD}
