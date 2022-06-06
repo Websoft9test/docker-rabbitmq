@@ -19,9 +19,6 @@ services:
       - 'rabbitmq_data:/var/lib/rabbitmq'
       - 'rabbitmq_plugins:/plugins'
       - 'rabbitmq_config:/etc/rabbitmq/conf.d'
-    command: bash -c "rabbitmqctl delete_user guest && rabbitmqctl add_user $RABBITMQ_USER $RABBITMQ_PASSWORD && rabbitmqctl set_user_tags admin administrator && tail -f /dev/null"
-    configs:
-      - source: my_cmd
       
 networks:
   default:
@@ -31,7 +28,3 @@ volumes:
   rabbitmq_data:
   rabbitmq_plugins:
   rabbitmq_config:
-
-configs:
-  my_cmd:
-    file: ./cmd.sh
