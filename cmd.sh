@@ -1,0 +1,3 @@
+      - sudo rabbitmqctl delete_user guest
+      - sudo rabbitmqctl add_user $RABBITMQ_USER $RABBITMQ_PASSWORD
+      - sudo rabbitmqctl set_user_tags admin administrator
