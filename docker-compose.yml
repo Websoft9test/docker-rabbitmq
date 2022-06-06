@@ -19,7 +19,7 @@ services:
       - 'rabbitmq_data:/var/lib/rabbitmq'
       - 'rabbitmq_plugins:/plugins'
       - 'rabbitmq_config:/etc/rabbitmq/conf.d'
-    command: bash -c "cat /my_cmd > /cmd.sh && chmod +x /cmd.sh && /cmd.sh"
+    command: bash -c "rabbitmqctl delete_user guest && rabbitmqctl add_user $RABBITMQ_USER $RABBITMQ_PASSWORD && rabbitmqctl set_user_tags admin administrator && tail -f /dev/null"
     configs:
       - source: my_cmd
       
