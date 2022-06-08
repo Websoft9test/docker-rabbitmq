@@ -13,8 +13,8 @@ services:
       - '${APP_MQ_PORT}:5672'
       - '${APP_PORT}:15672'
     environment:
-      - RABBITMQ_USER=${APP_USER}
-      - RABBITMQ_PASSWORD=${APP_PASSWORD}
+      - RABBITMQ_DEFAULT_USER=${APP_USER}
+      - RABBITMQ_DEFAULT_PASS=${APP_PASSWORD}
     volumes:
       - 'rabbitmq_data:/var/lib/rabbitmq'
       - 'rabbitmq_plugins:/plugins'
